@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+actor "ログイン利用者" as fc
+actor "非ログイン利用者" as fc2
+
+rectangle システム {
+  usecase "問題登録" as UC1
+  usecase "解答登録" as UC2
+  usecase "解答削除" as UC3
+  usecase "解答更新" as UC4
+  usecase "ログアウト" as UC5
+  usecase "ログイン" as UC6
+  usecase "特定解答検索" as UC7
+  usecase "複数回答検索" as UC8
+  usecase "利用者登録" as UC9
+  usecase "利用者検索" as UC10
+  usecase "問題検索" as UC11
+}
+
+
+fc --> UC1
+fc --> UC2
+fc --> UC3
+fc --> UC4
+fc --> UC5
+
+fc2--> UC6
+fc2 --> UC7
+fc2 --> UC8
+fc2 --> UC9
+fc2 --> UC10
+fc2 --> UC11
+@enduml
