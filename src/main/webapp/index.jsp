@@ -8,8 +8,17 @@
 </head>
 <body bgcolor="#FFA07A">
 	<div style="text-align: center">
-
-		<h1>社会科ドリルホーム画面</h1>
+		<header bgcolor="#FFFFFF" width="100%">
+			<h1 style="text-align: center;">社会科<br />ドリル</h1>
+			<div style="display: flex; flex-direction: row; justify-items: center; align-items: center; width: max-content;">
+				<p>
+					<font size="6"><a href="./register.jsp">利用者登録</a></font>
+				</p>
+				<p>
+					<font size="6"><a href="./login.jsp">ログイン画面へ</a></font>
+				</p>
+			</div>
+		</header>
 		<p>
 			<font size="6"><a href="./register.jsp">利用者登録</a></font>
 		</p>
