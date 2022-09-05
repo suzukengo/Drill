@@ -9,7 +9,7 @@
 <body bgcolor="#FFA07A">
 	<div style="text-align: center">
 
-		<h1>社会科ドリルホーム画面</h1>
+		<h1>社会科ドリルホーム</h1>
 		<p>
 			<font size="6"><a href="./register.jsp">利用者登録</a></font>
 		</p>
