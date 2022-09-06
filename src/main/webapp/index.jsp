@@ -31,8 +31,6 @@
 		<p>
 			<font size="6"><a href="./searchmanykaitou.jsp">複数解答検索</a></font>
 		</p>
-
-
 		
 		<p>
 			<font size="6">[説明]ログインすると、問題の登録、解答の登録・削除・更新が可能です。</font>
