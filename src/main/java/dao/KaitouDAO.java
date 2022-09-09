@@ -29,9 +29,11 @@ public class KaitouDAO {
 
 	// データベースのユーザー名 （デフォルトではroot）
 	private final static String USER_NAME = "kengo";
+	//private final static String USER_NAME = "root";
 
 	// データベースのユーザーのパスワード (デフォルトでは設定なし)
 	private final static String PASSWORD = "Suzuki1021#";
+	//private final static String PASSWORD = "";
 	// DockerでMysqlを起動した場合
 	// private final static String PASSWORD = "root";
 
