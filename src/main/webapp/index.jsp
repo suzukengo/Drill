@@ -3,52 +3,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>社会科ドリル</title>
-
+	<title>社会科ドリル</title>
 </head>
-<body bgcolor="#FFA07A">
-	<div style="text-align: center">
-		<header bgcolor="#FFFFFF" width="100%">
-			<h1 style="text-align: center;">社会科<br />ドリル</h1>
-			<div style="display: flex; flex-direction: row; justify-items: center; align-items: center; width: max-content;">
-				<p>
-					<font size="6"><a href="./register.jsp">利用者登録</a></font>
-				</p>
-				<p>
-					<font size="6"><a href="./login.jsp">ログイン画面へ</a></font>
-				</p>
+<body bgcolor="#FFA07A" style="margin: 0px;">
+	<div style=" margin-left: 200px; margin-right: 200px;">
+		<header width="auto" height="300" style="border-bottom: brown; border-bottom: 1px; margin-top: 50px;
+		 display: flex; justify-content: space-between; align-items: center;">
+			<h1>社会科ドリル</h1>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<a href="./register.jsp" style="padding-top: 5px; padding-bottom: 5px; padding-left: 30px; padding-right: 30px; text-decoration: none;">
+					<span style="font-size: 20px; color: #000;">利用者登録</span>
+				</a>
+				<a href="./login.jsp" style="padding-top: 5px; padding-bottom: 5px; padding-left: 30px; padding-right: 30px; text-decoration: none;">
+					<span style="font-size: 20px; color: #000;">ログイン画面へ</span>
+				</a>
 			</div>
 		</header>
-		<p>
-			<font size="6"><a href="./register.jsp">利用者登録</a></font>
-		</p>
-		<p>
-			<font size="6"><a href="./riyoushasearch.jsp">利用者検索</a></font>
-		</p>
-		<p>
-			<font size="6"><a href="./mondaiselect.jsp">問題検索</a></font>
-		</p>
-		<p>
-			<font size="6">[説明]IDを入力し単一の解答を検索可能です。↓</font>
-		</p>
-		<p>
-			<font size="6"><a href="./searchkaitou.jsp">特定解答検索</a></font>
-		</p>
-		<p>
-			<font size="6">[説明]1つの問題に対して複数個解答が登録されていれば全て表示します。↓</font>
-		</p>
-		<p>
-			<font size="6"><a href="./searchmanykaitou.jsp">複数解答検索</a></font>
-		</p>
-
-
-		
-		<p>
-			<font size="6">[説明]ログインすると、問題の登録、解答の登録・削除・更新が可能です。</font>
-		</p>
-		<p>
-			<font size="6"><a href="./login.jsp">ログイン画面へ</a></font>
-		</p>
+		<div style=" margin-top: 50px;">
+			<p>ログインすると、問題の登録、解答の登録・削除・更新が可能です。</p>
+			<div style="display: flex; justify-content: space-between; margin-top: 30px;">
+				<div style="width: 210px; height: 300px; background-color: antiquewhite; display: flex; align-items: center; justify-content: center;
+									 padding: 15px;">
+					<a href="./riyoushasearch.jsp">利用者検索</a>
+				</div>
+				<div style="width: 210px; height: 300px; background-color: antiquewhite; display: flex; align-items: center; justify-content: center;
+									  padding: 15px;">
+					<a href="./mondaiselect.jsp">問題検索</a>
+				</div>
+				<div style="width: 210px; height: 300px; background-color: antiquewhite; display: flex; flex-direction: column; align-items: center;
+									 justify-content: center; padding: 15px;">
+					<a href="./searchkaitou.jsp">特定解答検索</a>
+					<p>IDを入力し単一の解答を検索可能です。</p>
+				</div>
+				<div style="width: 210px; height: 300px; background-color: antiquewhite; display: flex; flex-direction: column; align-items: center;
+									 justify-content: center; padding: 15px;">
+					<a href="./searchmanykaitou.jsp">複数解答検索</a>
+					<p>1つの問題に対して複数個解答が登録されていれば全て表示します。</p>
+				</div>
+			</div>	
+		</div>
 	</div>
 </body>
 </html>
