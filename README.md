@@ -1,38 +1,24 @@
-# gradle-getting-started
+## 社会ドリルアプリケーション
+開発者  
+- 鈴木健吾
+- 小久保凛
 
-A barebones Gradle app, which can easily be deployed to Heroku.
+#### システム概要  
+社会科目におけるドリルアプリケーションである。利用者登録、利用者検索、問題検索、特定解答検索、複数解答検索、問題登録、解答登録、解答削除、解答更新の機能が搭載されている。
 
-This application support the [Getting Started with Gradle on Heroku](https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku) article - check it out.
+#### 機能要件  
+|機能|内容|
+|:--|:--|
+|利用者登録|利用者を登録する|
+|利用者検索|利用者を検索する|
+|特定解答検索|指定したIDの指定した問題IDの解答を検索する|
+|複数回答検索|指定した問題IDの解答を全て検索する|
+|問題登録|問題を登録する|
+|解答登録|解答を登録する|
+|解答削除|解答を削除する|
+|解答更新|解答を更新する|
+|ログイン認証|ログイン認証を行う|  
 
-## Running Locally
-
-Make sure you have Java installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
-
-```sh
-$ git clone https://github.com/heroku/gradle-getting-started.git
-$ cd gradle-getting-started
-$ ./gradlew stage
-$ heroku local web
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-If you're going to use a database, ensure you have a local `.env` file that reads something like this:
-
-```
-DATABASE_URL=postgres://localhost:5432/gradle_database_name
-```
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Java on Heroku, see these Dev Center articles:
-
-- [Java on Heroku](https://devcenter.heroku.com/categories/java)
+#### 設計書  
+docsフォルダの配下に、ユースケース図、クラス図、DB設計書がmdファイルとpuファイルで存在します。
+mysqlフォルダ配下に、DB定義データが存在します。
