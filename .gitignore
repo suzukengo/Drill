@@ -217,3 +217,5 @@ gradle-app.setting
 # idea
 .idea/
 # End of https://www.gitignore.io/api/java,gradle,eclipse,intellij,visualstudiocode
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
