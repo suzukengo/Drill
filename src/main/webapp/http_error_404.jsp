@@ -11,10 +11,7 @@
 	<div align="center">
         <jsp:include page="beforeheader.jsp" />
 
-
-
 		<font size="6">申し訳ございません、該当のページは存在しません。</a></font></br>
-
 
 	</div>
 </body>

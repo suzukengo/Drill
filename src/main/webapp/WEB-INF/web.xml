@@ -12,4 +12,5 @@
 		<error-code>500</error-code>
 		<location>/http_error_500.jsp</location>
 	</error-page>
+
 </web-app>
