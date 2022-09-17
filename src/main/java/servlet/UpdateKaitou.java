@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Kaitou;
 import control.KaitouManager;
+import control.RiyoushaManager;
 
 //アノテーションの記述
 @WebServlet("/UpdateKaitou")
@@ -42,6 +43,8 @@ public class UpdateKaitou extends HttpServlet {
 		String Id = request.getParameter("id");
 		String Kaitou = request.getParameter("kaitou");
 		String Pass = request.getParameter("pass");
+		RiyoushaManager manager2 = new RiyoushaManager();
+		String Password2 = manager2.SHA2(Pass).toString();
 
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
@@ -49,7 +52,7 @@ public class UpdateKaitou extends HttpServlet {
 		System.out.println("取得した文字列は" + Pass + "です！");
 
 		// kaitouオブジェクトに情報を格納
-		Kaitou kaitou = new Kaitou(Id,0, "", "", "", Kaitou, Pass);
+		Kaitou kaitou = new Kaitou(Id,0, "", "", "", Kaitou, Password2);
 
 		// KaitouManagerオブジェクトの生成
 		KaitouManager manager = new KaitouManager();

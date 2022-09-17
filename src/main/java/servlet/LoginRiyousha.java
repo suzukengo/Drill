@@ -25,14 +25,17 @@ public class LoginRiyousha extends HttpServlet {
 
 		// requestオブジェクトの文字エンコーディングの設定
 		request.setCharacterEncoding("UTF-8");
+		
 
 		// requestオブジェクトから登録情報の取り出し
 		String id = request.getParameter("id");
 		String pass2 = request.getParameter("pass");
+		RiyoushaManager manager = new RiyoushaManager();
+		RiyoushaManager manager2 = new RiyoushaManager();
+		String Password2 = manager2.SHA2(pass2).toString();
 
 		// loginのオブジェクトに情報を格納
-		Login login = new Login(id, pass2);
-		RiyoushaManager manager = new RiyoushaManager();
+		Login login = new Login(id, Password2);
 		boolean result = manager.loginRiyousha(login);
 
 		if (result) {

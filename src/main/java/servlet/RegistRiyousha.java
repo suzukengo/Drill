@@ -42,6 +42,9 @@ public class RegistRiyousha extends HttpServlet {
 		String Id = request.getParameter("id");
 		String Pass = request.getParameter("pass");
 		String Name = request.getParameter("name");
+		RiyoushaManager manager2 = new RiyoushaManager();
+		String Password2 = manager2.SHA2(Pass).toString();
+
 
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
@@ -49,7 +52,7 @@ public class RegistRiyousha extends HttpServlet {
 		System.out.println("取得した文字列は" + Name + "です！");
 
 		// riyoushaオブジェクトに情報を格納
-		Riyousha riyousha = new Riyousha(Id, Pass, Name);
+		Riyousha riyousha = new Riyousha(Id, Password2, Name);
 
 		// RiyoushaManagerオブジェクトの生成
 		RiyoushaManager manager = new RiyoushaManager();
