@@ -46,6 +46,11 @@ public class UpdateKaitou extends HttpServlet {
 		RiyoushaManager manager2 = new RiyoushaManager();
 		String Password2 = manager2.SHA2(Pass).toString();
 
+		Id = escape(Id);
+		Kaitou = escape(Kaitou);
+		Pass = escape(Pass);
+		Password2 = escape(Password2);
+
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
 		System.out.println("取得した文字列は" + Kaitou + "です！");
@@ -63,4 +68,14 @@ public class UpdateKaitou extends HttpServlet {
 		// 成功画面を表示する
 		response.sendRedirect("/Drill/UpdateKaitou");
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

@@ -47,6 +47,11 @@ public class RegistMondai extends HttpServlet {
 		String Age = request.getParameter("age");
 		String Mondai = request.getParameter("mondai");
 
+		Id = escape(Id);
+		Title = escape(Title);
+		Age = escape(Age);
+		Mondai = escape(Mondai);
+
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
 		System.out.println("取得した文字列は" + Mid + "です！");
@@ -67,4 +72,14 @@ public class RegistMondai extends HttpServlet {
 		// System.out.println("OK牧場");
 		response.sendRedirect("/Drill/RegistMondai");
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

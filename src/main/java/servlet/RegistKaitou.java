@@ -49,6 +49,13 @@ public class RegistKaitou extends HttpServlet {
 		String Pass = request.getParameter("pass");
 		RiyoushaManager manager2 = new RiyoushaManager();
 		String Password2 = manager2.SHA2(Pass).toString();
+
+		Id = escape(Id);
+		Title = escape(Title);
+		Age = escape(Age);
+		Mondai = escape(Mondai);
+		Kaitou = escape(Kaitou);
+		Password2 = escape(Password2);
 		
 
 		// コンソールに確認するために出力
@@ -73,4 +80,14 @@ public class RegistKaitou extends HttpServlet {
 		// System.out.println("OK牧場");
 		response.sendRedirect("/Drill/RegistKaitou");
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

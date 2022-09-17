@@ -39,6 +39,8 @@ public class SearchKaitou extends HttpServlet {
 		String id = request.getParameter("id");
 		Integer mid = Integer.valueOf(request.getParameter("mid")).intValue();
 
+		id = escape(id);
+
 		// kaitouのオブジェクトに情報を格納
 		Kaitou kaitou = new Kaitou();
 		kaitou.setId(id);
@@ -56,4 +58,14 @@ public class SearchKaitou extends HttpServlet {
 		dispatcher.forward(request, response);
 
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

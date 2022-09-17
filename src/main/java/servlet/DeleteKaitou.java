@@ -47,6 +47,10 @@ public class DeleteKaitou extends HttpServlet {
 		String Pass = request.getParameter("pass");
 		String Password2 = manager2.SHA2(Pass).toString();
 
+		Id = escape(Id);
+		Password2 = escape(Password2);
+		
+
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
 		System.out.println("取得した文字列は" + Mid + "です！");
@@ -64,4 +68,13 @@ public class DeleteKaitou extends HttpServlet {
 		// 成功画面を表示する
 		response.sendRedirect("/Drill/DeleteKaitou");
 	}
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

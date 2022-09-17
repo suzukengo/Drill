@@ -45,6 +45,11 @@ public class RegistRiyousha extends HttpServlet {
 		RiyoushaManager manager2 = new RiyoushaManager();
 		String Password2 = manager2.SHA2(Pass).toString();
 
+		Id = escape(Id);
+		Name = escape(Name);
+		Password2 = escape(Password2);
+
+
 
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
@@ -64,4 +69,14 @@ public class RegistRiyousha extends HttpServlet {
 
 		response.sendRedirect("/Drill/RegistInfok");
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }
