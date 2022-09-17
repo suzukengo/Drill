@@ -1,0 +1,46 @@
+@startuml class_diagram
+skinparam monochrome true
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+
+class ログイン利用者{
+    - ID:String    
+    - パスワード:String
+    - 氏名:String
+}
+
+class 非ログイン利用者{
+    - ID:String    
+    - パスワード:String
+    - 氏名:String
+}
+
+class 問題{
+    - 問題ID:Int
+    - ID:String
+    - 問題名:String
+    - 年代:String
+    - 問題文:String
+}
+
+
+class 解答{
+    - 問題ID:Int
+    - ID:String
+    - 問題名:String
+    - 年代:String
+    - 解答文:String
+    - パスワード:String
+}
+
+' 関係を定義 
+left to right direction
+ログイン利用者 "1...*" --- "0...*" 問題:"▼登録"
+ログイン利用者 "1...*" --- "0...1" 解答:"▼登録、削除、更新"
+非ログイン利用者 "1...*" --- "0...*" 問題:"▼閲覧"
+非ログイン利用者 "1...*" --- "0...*" 解答:"▼閲覧"
+問題 "1" --- "0...*" 解答
+
+' umlの終了を宣言
+@enduml
