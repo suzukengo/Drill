@@ -27,4 +27,5 @@ span:hover::after {
 header{
   border-bottom: 5px solid;
   border-bottom-color: antiquewhite;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
 }
