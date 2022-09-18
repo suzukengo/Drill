@@ -4,6 +4,7 @@
 <html>
 <head>
 	<title>社会科ドリル</title>
+	<link href="index.css" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="#FFA07A" style="margin: 0px;">
 	<div>
@@ -12,7 +13,7 @@
 			<h1>社会科ドリル</h1>
 			<div style="display: flex; flex-direction: row; justify-content: center;">
 				<a href="./register.jsp" style="padding-top: 5px; padding-bottom: 5px; padding-left: 30px; padding-right: 30px; text-decoration: none;">
-					<span style="font-size: 20px; color: #000;">利用者登録</span>
+					<span id="menu" style="font-size: 20px; color: #000;">利用者登録</span>
 				</a>
 				<a href="./login.jsp" style="padding-top: 5px; padding-bottom: 5px; padding-left: 30px; padding-right: 30px; text-decoration: none;">
 					<span style="font-size: 20px; color: #000;">ログイン画面へ</span>
