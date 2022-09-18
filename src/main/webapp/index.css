@@ -4,6 +4,7 @@ span{
   position: relative;
   display: inline-block;
   text-decoration: none;
+  filter: none;
 }
 span::after {
   position: absolute;
@@ -21,4 +22,9 @@ span:hover::after {
   bottom: -4px;
   opacity: 1;
   visibility: visible;
+}
+
+header{
+  border-bottom: 5px solid;
+  border-bottom-color: antiquewhite;
 }
