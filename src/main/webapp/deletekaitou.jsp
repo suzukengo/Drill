@@ -25,7 +25,7 @@
 		 </header>
 		<div style="margin-left: 200px; margin-right: 200px;">
 			<h1 style="margin-top: 30px; font-size: 30px; font-weight: 200; text-decoration: underline; text-underline-offset: 8px;">解答削除</h1>
-			<form action="RegistMondai" method="post" style="margin-left: 100px; margin-right: 100px; margin-top: 50px; margin-bottom: 50px;
+			<form action="./DeleteKaitou" method="post" style="margin-left: 100px; margin-right: 100px; margin-top: 50px; margin-bottom: 50px;
 				background-color: antiquewhite; padding: 50px; filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.4));
 				display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
 				<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
