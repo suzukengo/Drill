@@ -5,46 +5,61 @@
 Mondai mondai = (Mondai) request.getAttribute("Mondai");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>社会ドリル</title>
-</head>
-<body bgcolor="#FFA07A">
-	<div align="center">
-	<%
-	if (mondai == null) {
-	%>
-	<font size="6">該当する問題がありません．</font>
-	<br />
-	<%
-	} else {
-	%>
-	<table border="1" width="100%">
-		<thead>
-			<tr>
-				<td width="40%"><center>ID</center></td>
-				<td width="60%"><center><%=mondai.getId()%></center></td>
-			</tr>
-			<tr>
-				<td width="40%"><center>問題ID</center></td>
-				<td width="60%"><center><%=mondai.getMid()%></center></td>
-			</tr>
-			<tr>
-				<td width="40%"><center>問題名</center></td>
-				<td width="60%"><center><%=mondai.getTitle()%></center></td>
-			</tr>
-			<tr>
-				<td width="40%"><center>年代</center></td>
-				<td width="60%"><center><%=mondai.getAge()%></center></td>
-			</tr>
-			<tr>
-				<td width="40%"><center>問題</center></td>
-				<td width="60%"><center><%=mondai.getMondai()%></center></td>
-			</tr>
-		</tbody>
-	</table>
-	<%}%>
-	<font size="4"><a href="./index.jsp">トップ画面に戻る</a></font>
-	</div>
-</body>
+	<html>
+	<head>
+	<title>社会科ドリル</title>
+	<link href="index.css" rel="stylesheet" type="text/css">
+	</head>
+	<body bgcolor="#FFA07A" style="margin: 0px;">
+		<header width="auto" height="200">
+			<div style="margin-left: 200px; margin-right: 200px; display: flex; justify-content: space-between; align-items: center;">
+				<h1 style="display: flex; justify-content: space-between; align-items: center; width: 260px; filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.4));">
+					<p style="background-color: antiquewhite; width:40px; height:40px; display: flex; justify-content:center; align-items: center;">社</p>
+					<p style="background-color: antiquewhite; width:40px; height:40px; display: flex; justify-content:center; align-items: center;">会</p>
+					<p style="background-color: antiquewhite; width:40px; height:40px; display: flex; justify-content:center; align-items: center;">科</p>
+					<p style="background-color: antiquewhite; width:40px; height:40px; display: flex; justify-content:center; align-items: center;">ド</p>
+					<p style="background-color: antiquewhite; width:40px; height:40px; display: flex; justify-content:center; align-items: center;">リ</p>
+					<p style="background-color: antiquewhite; width:40px; height:40px; display: flex; justify-content:center; align-items: center;">ル</p>
+				</h1>
+			</div>
+		 </header>
+		<div style="margin-left: 200px; margin-right: 200px;">
+			<%
+			if (mondai == null) {
+			%>
+				<p style="margin-top: 0px; font-size: 24px; font-weight: 200; margin-top: 30px;">
+					該当する問題がありません。
+				</p><%
+			} else {
+			%>
+			<table border="1" width="100%">
+				<thead>
+					<tr>
+						<td width="40%"><center>ID</center></td>
+						<td width="60%"><center><%=mondai.getId()%></center></td>
+					</tr>
+					<tr>
+						<td width="40%"><center>問題ID</center></td>
+						<td width="60%"><center><%=mondai.getMid()%></center></td>
+					</tr>
+					<tr>
+						<td width="40%"><center>問題名</center></td>
+						<td width="60%"><center><%=mondai.getTitle()%></center></td>
+					</tr>
+					<tr>
+						<td width="40%"><center>年代</center></td>
+						<td width="60%"><center><%=mondai.getAge()%></center></td>
+					</tr>
+					<tr>
+						<td width="40%"><center>問題</center></td>
+						<td width="60%"><center><%=mondai.getMondai()%></center></td>
+					</tr>
+				</tbody>
+			</table>
+			<%}%>
+			<a href="./index.jsp" style="font-size:26px; color:antiquewhite; text-underline-offset:5px; display:flex; justify-content:center; margin-top:80px;">
+				トップ画面に戻る
+			</a>
+		</div>
+	</body>
 </html>

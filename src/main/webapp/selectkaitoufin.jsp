@@ -24,14 +24,11 @@ Kaitou kaitou = (Kaitou) request.getAttribute("Kaitou");
 			</div>
 		 </header>
 		<div style="margin-left: 200px; margin-right: 200px;">
-			<h1 style="margin-top: 30px; font-size: 30px; font-weight: 200; text-decoration: underline; text-underline-offset: 8px;">
-				ID・氏名一覧
-			</h1>
 			<%
 			if (kaitou == null) {
 			%>
-				<p style="margin-top: 0px; font-size: 24px; font-weight: 200;">
-					該当する利用者がいません。
+				<p style="margin-top: 0px; font-size: 24px; font-weight: 200; margin-top: 30px;">
+					該当する解答がありません。
 				</p><%
 			} else {
 			%>
