@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Kaitou;
 import control.KaitouManager;
+import control.RiyoushaManager;
 
 //アノテーションの記述
 @WebServlet("/RegistKaitou")
@@ -46,6 +47,16 @@ public class RegistKaitou extends HttpServlet {
 		String Mondai = request.getParameter("mondai");
 		String Kaitou = request.getParameter("kaitou");
 		String Pass = request.getParameter("pass");
+		RiyoushaManager manager2 = new RiyoushaManager();
+		String Password2 = manager2.SHA2(Pass).toString();
+
+		Id = escape(Id);
+		Title = escape(Title);
+		Age = escape(Age);
+		Mondai = escape(Mondai);
+		Kaitou = escape(Kaitou);
+		Password2 = escape(Password2);
+		
 
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
@@ -57,7 +68,7 @@ public class RegistKaitou extends HttpServlet {
 		System.out.println("取得した文字列は" + Pass + "です！");
 
 		// kaitouオブジェクトに情報を格納
-		Kaitou kaitou = new Kaitou(Id, Mid, Title, Age, Mondai, Kaitou, Pass);
+		Kaitou kaitou = new Kaitou(Id, Mid, Title, Age, Mondai, Kaitou, Password2);
 
 		// KaitouManagerオブジェクトの生成
 		KaitouManager manager = new KaitouManager();
@@ -69,4 +80,14 @@ public class RegistKaitou extends HttpServlet {
 		// System.out.println("OK牧場");
 		response.sendRedirect("/Drill/RegistKaitou");
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

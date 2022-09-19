@@ -1,0 +1,54 @@
+@startuml .
+title 問題検索
+hide footbox
+'これで囲むとコメントをかけます'
+
+'登場するオブジェクトを宣言 as でpuファイル上の略称を設定'
+actor 利用者 as actor
+participant mondaiselect.jsp as start
+participant selectmondai.jsp as finish
+participant SearchMondai as controller
+participant MondaiManager as service
+participant MondaiDAO as dao
+database drill as informations
+
+'やじるしを記述'
+actor -> start : 1:検索ボタンを押す
+'矢印の先端から四角をactivateで生成'
+activate start
+
+'矢印を発生'
+start -> controller : 1.1:post(String id) 
+'矢印の根本=四角の終了をdeactivateで記述'
+deactivate start
+activate controller
+
+
+controller -> service : 2:searchMondai(mondai);
+activate service
+
+'メソッド名はCamelCaseで基本書きます'
+service -> dao : 3:searchMondai(mondai,this.connection);
+activate dao
+
+dao -> informations : 4:select * from user where id = ?
+
+activate informations
+informations -> dao
+deactivate informations
+'戻りの場合はdeactivateが根本側になるのに注意'
+dao -> service : 
+deactivate dao
+
+service -> controller : 
+deactivate service
+
+
+controller -> finish : 
+deactivate controller
+
+
+@enduml
+Footer
+© 2022 GitHub, Inc.
+Footer navigation

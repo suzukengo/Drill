@@ -32,7 +32,7 @@ Kaitou kaitou = (Kaitou) request.getAttribute("Kaitou");
 		<%
 		if (kaitou == null) {
 		%>
-		該当する利用者がいません。<br />
+		処理に失敗しました．<br />
 		<%
 		} else {
 		%>

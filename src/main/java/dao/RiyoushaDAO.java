@@ -26,10 +26,10 @@ public class RiyoushaDAO {
 	// Mysql5.系
 	// private final static String DRIVER_NAME = "com.mysql.jdbc.Driver";
 	// Mysql8.系
-	private final static String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
+	private final static String DRIVER_NAME = "root";
 
 	// データベースのユーザー名 （デフォルトではroot）
-	private final static String USER_NAME = "kengo";
+	private final static String USER_NAME = "";
 
 	// データベースのユーザーのパスワード (デフォルトでは設定なし)
 	private final static String PASSWORD = "Suzuki1021#";

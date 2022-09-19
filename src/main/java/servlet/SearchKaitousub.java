@@ -44,6 +44,8 @@ public class SearchKaitousub extends HttpServlet {
 		kaitou.setId(id);
 		kaitou.setMid(mid);
 
+		id = escape(id);
+
 		// KaitouManagerオブジェクトの生成
 		KaitouManager manager = new KaitouManager();
 
@@ -56,4 +58,14 @@ public class SearchKaitousub extends HttpServlet {
 		dispatcher.forward(request, response);
 
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

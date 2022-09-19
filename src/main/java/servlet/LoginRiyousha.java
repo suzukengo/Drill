@@ -25,14 +25,20 @@ public class LoginRiyousha extends HttpServlet {
 
 		// requestオブジェクトの文字エンコーディングの設定
 		request.setCharacterEncoding("UTF-8");
+		
 
 		// requestオブジェクトから登録情報の取り出し
 		String id = request.getParameter("id");
 		String pass2 = request.getParameter("pass");
+		RiyoushaManager manager = new RiyoushaManager();
+		RiyoushaManager manager2 = new RiyoushaManager();
+		String Password2 = manager2.SHA2(pass2).toString();
+
+		id = escape(id);
+		Password2 = escape(Password2);
 
 		// loginのオブジェクトに情報を格納
-		Login login = new Login(id, pass2);
-		RiyoushaManager manager = new RiyoushaManager();
+		Login login = new Login(id, Password2);
 		boolean result = manager.loginRiyousha(login);
 
 		if (result) {
@@ -44,4 +50,13 @@ public class LoginRiyousha extends HttpServlet {
 		}
 
 	}
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }

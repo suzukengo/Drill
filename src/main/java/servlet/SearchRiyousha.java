@@ -37,6 +37,7 @@ public class SearchRiyousha extends HttpServlet {
 
 		// requestオブジェクトから登録情報の取り出し
 		String id = request.getParameter("id");
+		id = escape(id);
 
 		// riyoushaのオブジェクトに情報を格納
 		Riyousha riyousha = new Riyousha();
@@ -54,4 +55,14 @@ public class SearchRiyousha extends HttpServlet {
 		dispatcher.forward(request, response);
 
 	}
+
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }
