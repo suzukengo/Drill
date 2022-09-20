@@ -1,7 +1,7 @@
 ## 社会ドリルアプリケーション
 開発者  
-- 鈴木健吾(バックエンド担当)
-- 小久保凛(フロントエンド担当)
+- 鈴木 健吾(バックエンド担当)
+- 小久保 凛(フロントエンド担当)
 
 #### システム概要  
 社会科目におけるドリルアプリケーションである。アプリ利用者は自由に問題・解答を作成することが可能である。また、登録してある解答の更新や削除といった機能も搭載している。  
@@ -37,10 +37,49 @@ docsフォルダの配下に、ユースケース図、クラス図、DB設計�
 mysqlフォルダ配下に、DB定義データが存在します。
 
 #### 開発環境
+##### 言語
 - Java
+- HTML/CSS
+##### フレームワーク
 - Servlet/Jsp
+##### DB
 - Mysql
+
+##### ビルドツール
 - Gradle
 
+
 #### 実行方法
-Powershellやコマンドプロンプトを起動し、プロジェクト直下で「gradle tomcatRun」or「gradle tR」とコマンドを実行する。
+Powershellやコマンドプロンプトを起動し、プロジェクト直下で「gradle tomcatRun」or「gradle tR」とコマンドを実行する。　　
+
+
+
+## ディレクトリ構成
+<pre>
+.
+├── README.md
+├── build.gradle
+├── docs
+│   └── README.md
+│       ├── database.md
+│       └── usecase.pu
+│       ├── クラス図
+│       └── シーケンス図
+│       └── ステートチャート図
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── gradlew.properties
+├── docker-compose.yml
+├── mysql.Dockerfile
+├── settings.gradle
+├── .gitignore
+├── .gitignore.swp
+└── src
+    └── main
+        ├── java
+        └── webapp
+</pre>
