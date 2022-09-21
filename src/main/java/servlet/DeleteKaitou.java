@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Kaitou;
 import control.KaitouManager;
+import control.RiyoushaManager;
+import dao.RiyoushaDAO;
 
 //アノテーションの記述
 @WebServlet("/DeleteKaitou")
@@ -37,22 +39,28 @@ public class DeleteKaitou extends HttpServlet {
 
 		// requestオブジェクトの文字エンコーディングの設定
 		request.setCharacterEncoding("UTF-8");
-
+		KaitouManager manager = new KaitouManager();
+		RiyoushaManager manager2 = new RiyoushaManager();
 		// requestオブジェクトから登録情報の取り出し
 		String Id = request.getParameter("id");
 		Integer Mid = Integer.valueOf(request.getParameter("mid")).intValue();
 		String Pass = request.getParameter("pass");
+		String Password2 = manager2.SHA2(Pass).toString();
+
+		Id = escape(Id);
+		Password2 = escape(Password2);
+		
 
 		// コンソールに確認するために出力
 		System.out.println("取得した文字列は" + Id + "です！");
 		System.out.println("取得した文字列は" + Mid + "です！");
-		System.out.println("取得した文字列は" + Pass + "です！");
+		System.out.println("取得した文字列は" + Password2 + "です！");
 
 		// kaitouオブジェクトに情報を格納
-		Kaitou kaitou = new Kaitou(Id, Mid, "", "", "", "", Pass);
+		Kaitou kaitou = new Kaitou(Id, Mid, "", "", "", "", Password2);
 
 		// KaitouManagerオブジェクトの生成
-		KaitouManager manager = new KaitouManager();
+		
 
 		// 登録
 		manager.deleteKaitou(kaitou);
@@ -60,4 +68,13 @@ public class DeleteKaitou extends HttpServlet {
 		// 成功画面を表示する
 		response.sendRedirect("/Drill/DeleteKaitou");
 	}
+	private static String escape(String val) {
+		if (val == null) return "";
+		val = val.replaceAll("&", "& amp;");
+		val = val.replaceAll("<", "& lt;");
+		val = val.replaceAll(">", "& gt;");
+		val = val.replaceAll("\"", "&quot;");
+		val = val.replaceAll("'", "&apos;");
+		return val;
+	  }
 }
